@@ -1,8 +1,53 @@
-Algorithms checkpoint
+Algorithm Distinct_Sum
 
 Variables
+    A, B, C : array of integers
+    i, j : integer
+    S : integer ← 0
+    found : boolean
 
-A := [1,2,3,4];
-B := [2,4,5,6];
+Begin
 
-Start 
+    Read(A)
+    Read(B)
+
+    C ← empty array
+
+    // Check elements in A
+    For i ← 0 to length(A) - 1 do
+        found ← False
+
+        For j ← 0 to length(B) - 1 do
+            If A[i] = B[j] then
+                found ← True
+            EndIf
+        EndFor
+
+        If found = False then
+            Add A[i] to C
+        EndIf
+    EndFor
+
+    // Check elements in B
+    For i ← 0 to length(B) - 1 do
+        found ← False
+
+        For j ← 0 to length(A) - 1 do
+            If B[i] = A[j] then
+                found ← True
+            EndIf
+        EndFor
+
+        If found = False then
+            Add B[i] to C
+        EndIf
+    EndFor
+
+    // Calculate sum
+    For i ← 0 to length(C) - 1 do
+        S ← S + C[i]
+    EndFor
+
+    Print("Sum of distinct elements: ", S)
+
+End
