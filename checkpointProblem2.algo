@@ -1,0 +1,41 @@
+Algorithm Orthogonal_Vectors
+
+Variables
+    V1, V2 : array of integers
+    i, k : integer
+    n : integer
+    nbPairs : integer
+    ps : integer
+
+Procedure dot_product(V1, V2, n, ps)
+
+    ps ← 0
+
+    For i ← 0 to n - 1 do
+        ps ← ps + (V1[i] * V2[i])
+    EndFor
+
+EndProcedure
+
+Begin
+
+    Read(nbPairs)
+
+    For k ← 1 to nbPairs do
+
+        Read(n)
+
+        Read(V1)
+        Read(V2)
+
+        Call dot_product(V1, V2, n, ps)
+
+        If ps = 0 then
+            Print("Orthogonal")
+        Else
+            Print("Not Orthogonal")
+        EndIf
+
+    EndFor
+
+End

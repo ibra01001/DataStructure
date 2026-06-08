@@ -1,5 +1,5 @@
 Algorithm Distinct_Sum
-
+// problem 1
 Variables
     A, B, C : array of integers
     i, j : integer
@@ -51,3 +51,4 @@ Begin
     Print("Sum of distinct elements: ", S)
 
 End
+Algorithm 
